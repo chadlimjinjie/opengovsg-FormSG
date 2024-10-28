@@ -145,7 +145,7 @@ services:
       - MOCKPASS_NRIC=S6005038D
       - MOCKPASS_UEN=123456789A
       - SHOW_LOGIN_PAGE=true
-      - SP_RP_JWKS_ENDPOINT=http://localhost:5000/singpass/.well-known/jwks.json
+      - SP_RP_JWKS_ENDPOINT=http://localhost:5000/sp/.well-known/jwks.json
       - CP_RP_JWKS_ENDPOINT=http://localhost:5000/api/v3/corppass/.well-known/jwks.json
     network_mode: 'service:backend' # reuse backend service's network stack so that it can resolve localhost:5156 to mockpass:5156
 
