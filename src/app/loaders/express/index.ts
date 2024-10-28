@@ -114,7 +114,13 @@ const loadExpressApp = async (connection: Connection) => {
     app.use(growthbookMiddleware)
   }
 
-  // jwks endpoint for SP OIDC
+  /**
+   * jwks endpoint for SP OIDC
+   */
+  app.use('/sp/.well-known/jwks.json', SpOidcJwksRouter)
+  /** Legacy route for backward compatibility
+   * @deprecated TODO(FRM-1893): remove after config on Singpass portal is also updated for Prod
+   */
   app.use('/singpass/.well-known/jwks.json', SpOidcJwksRouter)
   // Registered routes with sgID
   app.use('/sgid', SgidRouter)
